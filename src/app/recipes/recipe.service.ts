@@ -11,7 +11,7 @@ export class RecipeService {
         new Recipe(
             'Vegan Hamburger',
             'Mushrooms and Bean',
-            'https://latelier-du-burger-nice.fr/wp-content/uploads/2017/11/veggie-burger-0.jpg',
+            'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/3/5/0/FNK_Healthy-Vega-Burger_s4x3.jpg.rend.hgtvcom.616.462.suffix/1394028524949.jpeg',
             [
                 new Ingredient('mushrooms', 2),
                 new Ingredient('bean', 1)
@@ -31,6 +31,10 @@ export class RecipeService {
       getRecipes() {
           //get a copy of the array, not a reference
           return this.recipes.slice();
+      }
+
+      getRecipe(index: number) {
+          return this.recipes[index]; //index because we have an array of recipes
       }
 
       addIngredientToShoppingList(ingredients: Ingredient[]) {
